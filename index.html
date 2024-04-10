@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-do List</title>
+    <link rel="stylesheet" href="./style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="main">
+        <div class="container">
+            <div class="wrapper">
+                <input type="text" placeholder="Enter task to do ">
+                <button id="add-btn">Add</button>
+            </div>
+
+            <div class="tasks">
+                <p id="pendingTasks">You have <span id="taskCount">0</span> tasks pending</p>
+            </div>
+
+        </div>
+        <p id="error">Input cannot be empty</p>
+    </div>
+</body>
+<script src="./logic.js"></script>
+</html>
