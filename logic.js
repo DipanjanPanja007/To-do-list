@@ -6,7 +6,7 @@ const countValue = document.querySelector('#taskCount')
 
 let taskCount = 0;
 
-const displayCount = (taskCount) => {
+const displayCount = (taskCount) => {    
     countValue.innerText = taskCount;
 }
 
