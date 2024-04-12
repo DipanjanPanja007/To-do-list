@@ -49,10 +49,10 @@ const addTask = () => {
     editButton.forEach(button => {
         button.onclick = (e) => {
             let targetElement = e.target;
-            if (!(e.target.className == "`edit")) {
-                targetElement = e.target.parentNode;
+            if (!(e.target.className == "edit")) {
+                targetElement = e.target;
             }
-            console.log(targetElement.previousElementSibling?.innerText);
+            // console.log(targetElement.previousElementSibling?.innerText);
             newTaskInput.value = targetElement.previousElementSibling?.innerText;
             targetElement.parentNode.remove();
             taskCount -= 1;
@@ -77,13 +77,15 @@ const addTask = () => {
     })
 
 
-    window.onload=() =>{
-        taskCount=0;
-        displayCount(taskCount);
-        newTaskInput.value="";
-    }
+    
 
 }
+
+window.onload=() =>{
+        taskCount=0;
+        displayCount(taskCount);
+        newTaskInput.value = "";
+    }
 
 addBtn.addEventListener('click', addTask);
 
