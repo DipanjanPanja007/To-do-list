@@ -20,7 +20,8 @@ const addTask = () => {
         return;
     }
     // else part
-    const task = `<div class="task">
+    const task = 
+        `<div class="task">
             <input type="checkbox" class="taskCheck">
             <span class="taskName"> ${taskName}</span>
             <button class="edit">
@@ -53,9 +54,17 @@ const addTask = () => {
                 targetElement = e.target;
             }
             // console.log(targetElement.previousElementSibling?.innerText);
+            if(targetElement.tagName === "I" && targetElement.parentElement.classList.contains('edit')){
+                // console.log("bug found");
+                targetElement=targetElement.parentElement;
+            }
             newTaskInput.value = targetElement.previousElementSibling?.innerText;
             targetElement.parentNode.remove();
-            taskCount -= 1;
+            if(!targetElement.parentElement.children[1].classList.contains('completed')){
+                // console.log("completed");
+                taskCount -= 1;
+            }
+            
             displayCount(taskCount);
         };
 
