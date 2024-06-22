@@ -41,7 +41,10 @@ const addTask = () => {
     deleteButton.forEach(button => {
         button.onclick = () => {
             button.parentNode.remove();
-            taskCount -= 1;
+            if(!button.parentElement.children[1].classList.contains('completed')){
+                console.log("completed");
+                taskCount -= 1;
+            }
             displayCount(taskCount);
         }
     })
@@ -99,3 +102,9 @@ window.onload=() =>{
 addBtn.addEventListener('click', addTask);
 
 
+newTaskInput.addEventListener('keydown', function(event) {
+    if (event.key === 'Enter') {
+        event.preventDefault(); // Prevent default Enter key behavior
+        addTask(); // Call addTask function
+    }
+});
