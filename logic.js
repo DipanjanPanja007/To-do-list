@@ -64,7 +64,7 @@ const addTask = () => {
             newTaskInput.value = targetElement.previousElementSibling?.innerText;
             targetElement.parentNode.remove();
             if(!targetElement.parentElement.children[1].classList.contains('completed')){
-                console.log("uncompleted task edits");
+                // console.log("uncompleted task edits");
                 taskCount -= 1;
             }
             
